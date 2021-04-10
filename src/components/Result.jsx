@@ -11,7 +11,7 @@ function Result(props) {
     return (
         <div>
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <p>Color : red - Fontsize : 12px</p>
+                <p>Color :{thiscolor?thiscolor:'red'} - Fontsize : {thisfontsize?thisfontsize:14} px</p>
                 <div className="content" style={{borderColor:thiscolor,fontSize:thisfontsize }}>
                 Nội dung Setting
                 </div>

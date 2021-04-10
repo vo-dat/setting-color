@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 ColorPicker.propTypes = {
@@ -8,7 +8,8 @@ ColorPicker.propTypes = {
 
 function ColorPicker(props) {
     const {thiscolor,handelReceiveColor}= props;
-    const [colors, setcolor] = useState(['red','green','blue','yellow']);
+    // const [colors, setcolor] = useState(['red','green','blue','yellow']);
+    const colors=['Red','green','blue','yellow'];
     function setActiveColor(color){
         if(!handelReceiveColor)return;
         handelReceiveColor(color);

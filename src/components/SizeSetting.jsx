@@ -3,18 +3,14 @@ import PropTypes from 'prop-types';
 
 SizeSetting.propTypes = {
     fontsize:PropTypes.number,
-    receiFontsize: PropTypes.func,
+    onChangeSize: PropTypes.func,
 };
 
 function SizeSetting(props) {
-    const {fontsize,receiFontsize} = props;
-    function handelNextSize(fontsize){
-        fontsize =fontsize+1;
-        receiFontsize(fontsize);    
-    }
-    function handelPreSize(fontsize){
-        fontsize =fontsize-1;
-        receiFontsize(fontsize);    
+    const {fontsize,onChangeSize} = props;
+    function handelOnChangeSise(value){
+        if (!onChangeSize){return ;}
+        onChangeSize(value); 
     }
     return (
         <div>
@@ -24,9 +20,9 @@ function SizeSetting(props) {
                   </div>
                   <div className="panel-body">
                      
-                    <button type="button" className="btn btn-success" onClick={()=>handelPreSize(fontsize)} >Giảm</button>
+                    <button type="button" className="btn btn-success" onClick={()=>handelOnChangeSise(-2)} >Giảm</button>
                     <span> </span>
-                    <button type="button" className="btn btn-success" onClick={()=>handelNextSize(fontsize)}>Tăng</button>
+                    <button type="button" className="btn btn-success" onClick={()=>handelOnChangeSise(2)}>Tăng</button>
                      
                   </div>  
               </div>
